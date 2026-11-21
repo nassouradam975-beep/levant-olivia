@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levant Olivia</title>
+<meta name="description" content="Levant Olivia – Olivenöl aus den Hainen unserer Familie in Syrien. Von Großvaters Bäumen direkt zu dir nach Hause.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a quiet, stone-and-olive storefront. Grandfather's story leads, one product, short proof sections. */
+:root{
+  --stone:#EEF0E7;      /* page background, pale olive-grey stone */
+  --paper:#F8F9F4;      /* raised surfaces */
+  --olive:#2B3421;      /* ink, deep olive, matches the logo background */
+  --leaf:#5B6B3A;       /* secondary text, olive leaf */
+  --oil:#B08A22;        /* accent, olive-oil gold */
+  --line:#D5D9C8;       /* hairlines */
+  --display:"Marcellus", "Times New Roman", serif;
+  --body:"Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--stone);color:var(--olive);font-family:var(--body);font-size:17px;line-height:1.6;color-scheme:light}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--oil);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(2.4rem,5vw,3.8rem)}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+h3{font-size:1.3rem}
+p{max-width:62ch}
+.muted{color:var(--leaf)}
+.ph{background:#F3E7BF;color:#6B5310;padding:0 .3em;border-radius:3px;font-size:.92em;white-space:nowrap}
+
+/* header */
+header{background:var(--olive)}
+header .logo img{height:58px;width:auto}
+header .nav ul a{color:#C9D0B8}
+header .nav ul a:hover{color:var(--paper)}
+header .btn{background:var(--paper);color:var(--olive)}
+header .btn:hover{background:#fff}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.story-photo{width:100%;border-radius:4px;margin-bottom:24px;border:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.45rem;text-decoration:none;letter-spacing:.02em}
+.nav ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
+.nav ul a{text-decoration:none;font-size:.95rem;color:var(--leaf)}
+.nav ul a:hover{color:var(--olive)}
+.btn{display:inline-block;background:var(--olive);color:var(--paper);text-decoration:none;padding:13px 26px;border-radius:999px;font-weight:500;border:0;cursor:pointer;font:inherit;font-weight:500}
+.btn:hover{background:#1a2315}
+.btn.small{padding:9px 18px;font-size:.92rem}
+.btn.ghost{background:transparent;color:var(--olive);border:1px solid var(--olive)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:64px}
+.eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oil);font-weight:600;margin-bottom:14px}
+.hero p.lead{font-size:1.15rem;margin:20px 0 30px;color:var(--leaf)}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.portrait{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:18px}
+.portrait .frame{aspect-ratio:4/5;background:linear-gradient(160deg,#DDE2CF,#C9D0B4);border-radius:3px;display:grid;place-items:center;text-align:center;color:var(--leaf);font-size:.9rem;padding:20px}
+.portrait figcaption{margin-top:12px;font-size:.9rem;color:var(--leaf)}
+
+/* facts strip */
+.facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:26px;padding-bottom:26px}
+.fact b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:400}
+.fact span{font-size:.88rem;color:var(--leaf)}
+
+section{padding:80px 0}
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.story blockquote{font-family:var(--display);font-size:1.6rem;line-height:1.35;border-left:3px solid var(--oil);padding-left:20px;margin-top:8px}
+.story blockquote cite{display:block;font-family:var(--body);font-style:normal;font-size:.9rem;color:var(--leaf);margin-top:12px}
+.story .text{display:grid;gap:16px}
+
+/* product */
+.product{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prod{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.bottle img{width:100%;border-radius:6px;border:1px solid var(--line)}
+.price{font-family:var(--display);font-size:2.2rem;margin:10px 0 4px}
+.specs{list-style:none;margin:22px 0 28px;border-top:1px solid var(--line)}
+.specs li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.specs li span:first-child{color:var(--leaf)}
+.note{font-size:.82rem;color:var(--leaf);margin-top:14px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;counter-reset:s}
+.step{border-top:2px solid var(--olive);padding-top:18px}
+.step .n{font-family:var(--display);color:var(--oil);font-size:1.1rem}
+.step h3{margin:6px 0 8px}
+.step p{font-size:.96rem;color:var(--leaf)}
+
+/* faq */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--oil);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--leaf)}
+
+footer{background:var(--olive);color:#DCE1CF;padding:48px 0 36px;font-size:.92rem}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer h3{color:var(--paper);font-size:1.15rem;margin-bottom:10px}
+footer ul{list-style:none;display:grid;gap:6px}
+footer a{color:#DCE1CF}
+footer .small{margin-top:32px;border-top:1px solid #3B4A30;padding-top:18px;font-size:.82rem;color:#A9B396}
+
+@media (max-width:860px){
+  .hero,.story,.prod{grid-template-columns:1fr;gap:32px}
+  .facts .wrap{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .hero{padding-top:40px}
+}
+@media (max-width:420px){.nav ul{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Levant Olivia Startseite">
+      <img src="img/logo.jpg" alt="Levant Olivia" width="166" height="58">
+    </a>
+    <ul>
+      <li><a href="#geschichte">Unsere Geschichte</a></li>
+      <li><a href="#oel">Das Öl</a></li>
+      <li><a href="#herkunft">Vom Hain zu dir</a></li>
+      <li><a href="#faq">Fragen</a></li>
+    </ul>
+    <a class="btn small" href="#oel">Jetzt bestellen</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Familienöl aus Syrien</p>
+      <h1>Das Olivenöl meines Großvaters, gepresst aus seinen eigenen Bäumen.</h1>
+      <p class="lead">Seit <span class="ph">[Anzahl]</span> Jahren pflegt unsere Familie ihre Olivenhaine bei Latakia. Jetzt bringen wir das Öl, das bei uns zu Hause auf jedem Tisch steht, direkt zu dir nach Deutschland.</p>
+      <div class="actions">
+        <a class="btn" href="#oel">Öl entdecken</a>
+        <a class="btn ghost" href="#geschichte">Seine Geschichte</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="img/grandpa-swing.jpg" alt="Großvater Amin auf einer Schaukel im Garten unter den Bäumen" width="765" height="1020">
+      <figcaption>Großvater Amin, <span class="ph">[Alter]</span> Jahre, in seinem Garten in Latakia</figcaption>
+    </figure>
+  </div>
+
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><b>1 Familie</b><span>Ein Hain, keine Mischung fremder Öle</span></div>
+      <div class="fact"><b><span class="ph">[Jahr]</span></b><span>Ernte dieses Jahrgangs</span></div>
+      <div class="fact"><b><span class="ph">[Sorte]</span></b><span>Olivensorte aus der Region</span></div>
+      <div class="fact"><b>Syrien</b><span>Ursprung, auf jedem Etikett</span></div>
+    </div>
+  </div>
+
+  <section id="geschichte">
+    <div class="wrap story">
+      <div>
+        <p class="eyebrow">Unsere Geschichte</p>
+        <h2>Ein Hain, drei Generationen.</h2>
+        <blockquote>„Wer schnell reich werden will, pflanzt keine Olivenbäume."
+          <cite>– Großvater Amin</cite>
+        </blockquote>
+      </div>
+      <div class="text">
+        <p>Mein Großvater Amin hat sein ganzes Leben zwischen Olivenbäumen verbracht. Schon sein Vater hat in Latakia Oliven geerntet, und jedes Jahr im Herbst kommt die ganze Familie zusammen, um zu pflücken.</p>
+        <p>Für uns war dieses Öl nie ein Produkt. Es war Frühstück mit Zaatar und Brot, es war das Essen meiner Großmutter, es war Zuhause. Als wir nach Hamburg kamen, haben wir es immer vermisst, denn so ein Öl findet man hier im Supermarkt nicht.</p>
+        <p>Mit Levant Olivia teilen wir es jetzt mit dir: dasselbe Öl, das bei uns zu Hause steht, abgefüllt für deinen Tisch.</p>
+        <p class="muted"><span class="ph">[Diese Geschichte mit den echten Details der Familie anpassen. Nur schreiben, was wirklich stimmt.]</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oel" class="product">
+    <div class="wrap prod">
+      <div class="bottle">
+        <img src="img/bottle.jpg" alt="Flasche Levant Olivia Olivenöl, 500 ml" width="700" height="1050">
+      </div>
+      <div>
+        <p class="eyebrow">Das Öl</p>
+        <h2>Levant Olivia <span class="ph">[Natives Olivenöl extra]</span></h2>
+        <p class="price"><span class="ph">[Preis] €</span></p>
+        <p class="muted">500 ml · <span class="ph">[Grundpreis pro Liter]</span> · inkl. MwSt., zzgl. Versand</p>
+        <ul class="specs">
+          <li><span>Herkunft</span><span>Latakia, Syrien</span></li>
+          <li><span>Olivensorte</span><span><span class="ph">[Sorte]</span></span></li>
+          <li><span>Ernte</span><span><span class="ph">[Monat/Jahr]</span></span></li>
+          <li><span>Geschmack</span><span><span class="ph">[z. B. fruchtig, leicht pfeffrig]</span></span></li>
+          <li><span>Mindestens haltbar bis</span><span><span class="ph">[Datum]</span></span></li>
+        </ul>
+        <a class="btn" href="#" id="buy">Jetzt kaufen</a>
+        <p class="note">Bezahlung sicher über Whop. Der Kaufen-Button wird mit deinem Whop-Produktlink verbunden.<br>Die Bezeichnung „Natives Olivenöl extra" erst nach bestandener Laboranalyse verwenden.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="herkunft">
+    <div class="wrap">
+      <p class="eyebrow">Vom Hain zu dir</p>
+      <h2>So kommt das Öl auf deinen Tisch.</h2>
+      <div class="steps">
+        <div class="step"><span class="n">01</span><h3>Ernte von Hand</h3><p>Im <span class="ph">[Monat]</span> pflückt die Familie die Oliven in Latakia.</p></div>
+        <div class="step"><span class="n">02</span><h3>Pressung</h3><p>Die Oliven werden in <span class="ph">[Mühle/Ort]</span> mechanisch zu Öl verarbeitet. <span class="ph">[Details nur, wenn sie stimmen]</span></p></div>
+        <div class="step"><span class="n">03</span><h3>Abgefüllt für dich</h3><p>Das Öl wird in Flaschen abgefüllt, etikettiert und aus Hamburg an dich verschickt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap faq">
+      <p class="eyebrow">Fragen</p>
+      <h2>Gut zu wissen</h2>
+      <details><summary>Wohin liefert ihr?</summary><p>Wir versenden innerhalb Deutschlands. <span class="ph">[Versandkosten und Lieferzeit eintragen]</span></p></details>
+      <details><summary>Wie lagere ich das Öl richtig?</summary><p>Kühl, dunkel und gut verschlossen, nicht neben dem Herd. So bleibt das Aroma bis zum Mindesthaltbarkeitsdatum erhalten.</p></details>
+      <details><summary>Ist das Öl geprüft?</summary><p><span class="ph">[Nur ausfüllen, wenn es eine Laboranalyse gibt: was geprüft wurde und von wem.]</span></p></details>
+      <details><summary>Kann ich für Restaurants oder Läden bestellen?</summary><p>Ja. Für größere Mengen schreib uns an <span class="ph">[E-Mail-Adresse]</span>.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Levant Olivia</h3>
+        <p>Olivenöl aus den Hainen unserer Familie in Syrien, abgefüllt für Deutschland.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul><li><a href="#oel">Das Öl</a></li><li><a href="#geschichte">Unsere Geschichte</a></li><li><a href="#faq">Fragen</a></li></ul>
+      </div>
+      <div>
+        <h3>Rechtliches</h3>
+        <ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li><li><a href="#">AGB</a></li><li><a href="#">Widerrufsbelehrung</a></li><li><a href="#">Versand &amp; Zahlung</a></li></ul>
+      </div>
+    </div>
+    <p class="small">© 2026 Levant Olivia · <span class="ph">[Firmenname / Inhaber, Anschrift]</span></p>
+  </div>
+</footer>
+
+<script>
+  // Replace with the real Whop product link when the store is set up.
+  var WHOP_LINK = "";
+  var buy = document.getElementById("buy");
+  buy.addEventListener("click", function(e){
+    if(!WHOP_LINK){ e.preventDefault(); buy.textContent = "Bald verfügbar"; }
+    else { buy.href = WHOP_LINK; }
+  });
+</script>
+</body>
+</html>
