@@ -176,7 +176,7 @@ footer .small{margin-top:32px;border-top:1px solid #3B4A30;padding-top:18px;font
         <p>Mein Großvater Amin hat sein ganzes Leben zwischen Olivenbäumen verbracht. Schon sein Vater hat in Latakia Oliven geerntet, und jedes Jahr im Herbst kommt die ganze Familie zusammen, um zu pflücken.</p>
         <p>Für uns war dieses Öl nie ein Produkt. Es war Frühstück mit Zaatar und Brot, es war das Essen meiner Großmutter, es war Zuhause. Als wir nach Hamburg kamen, haben wir es immer vermisst, denn so ein Öl findet man hier im Supermarkt nicht.</p>
         <p>Mit Levant Olivia teilen wir es jetzt mit dir: dasselbe Öl, das bei uns zu Hause steht, abgefüllt für deinen Tisch.</p>
-        <p class="muted"><span class="ph">[Diese Geschichte mit den echten Details der Familie anpassen. Nur schreiben, was wirklich stimmt.]</span></p>
+        <!-- Story: only keep details that are true for the family. -->
       </div>
     </div>
   </section>
@@ -189,8 +189,8 @@ footer .small{margin-top:32px;border-top:1px solid #3B4A30;padding-top:18px;font
       <div>
         <p class="eyebrow">Das Öl</p>
         <h2>Levant Olivia <span class="ph">[Natives Olivenöl extra]</span></h2>
-        <p class="price"><span class="ph">[Preis] €</span></p>
-        <p class="muted">500 ml · <span class="ph">[Grundpreis pro Liter]</span> · inkl. MwSt., zzgl. Versand</p>
+        <p class="price">25,00 €</p>
+        <p class="muted">500 ml · 50,00 € / Liter · inkl. MwSt., zzgl. Versand</p>
         <ul class="specs">
           <li><span>Herkunft</span><span>Latakia, Syrien</span></li>
           <li><span>Olivensorte</span><span><span class="ph">[Sorte]</span></span></li>
@@ -199,7 +199,8 @@ footer .small{margin-top:32px;border-top:1px solid #3B4A30;padding-top:18px;font
           <li><span>Mindestens haltbar bis</span><span><span class="ph">[Datum]</span></span></li>
         </ul>
         <a class="btn" href="#" id="buy">Jetzt kaufen</a>
-        <p class="note">Bezahlung sicher über Whop. Der Kaufen-Button wird mit deinem Whop-Produktlink verbunden.<br>Die Bezeichnung „Natives Olivenöl extra" erst nach bestandener Laboranalyse verwenden.</p>
+        <p class="note">Sichere Bezahlung über Whop.</p>
+        <!-- Use "Natives Olivenöl extra" only after a passed lab analysis. -->
       </div>
     </div>
   </section>
@@ -210,7 +211,7 @@ footer .small{margin-top:32px;border-top:1px solid #3B4A30;padding-top:18px;font
       <h2>So kommt das Öl auf deinen Tisch.</h2>
       <div class="steps">
         <div class="step"><span class="n">01</span><h3>Ernte von Hand</h3><p>Im <span class="ph">[Monat]</span> pflückt die Familie die Oliven in Latakia.</p></div>
-        <div class="step"><span class="n">02</span><h3>Pressung</h3><p>Die Oliven werden in <span class="ph">[Mühle/Ort]</span> mechanisch zu Öl verarbeitet. <span class="ph">[Details nur, wenn sie stimmen]</span></p></div>
+        <div class="step"><span class="n">02</span><h3>Pressung</h3><p>Die Oliven werden in <span class="ph">[Mühle/Ort]</span> mechanisch zu Öl verarbeitet. </p></div>
         <div class="step"><span class="n">03</span><h3>Abgefüllt für dich</h3><p>Das Öl wird in Flaschen abgefüllt, etikettiert und aus Hamburg an dich verschickt.</p></div>
       </div>
     </div>
@@ -241,21 +242,19 @@ footer .small{margin-top:32px;border-top:1px solid #3B4A30;padding-top:18px;font
       </div>
       <div>
         <h3>Rechtliches</h3>
-        <ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li><li><a href="#">AGB</a></li><li><a href="#">Widerrufsbelehrung</a></li><li><a href="#">Versand &amp; Zahlung</a></li></ul>
+        <ul><li><a href="impressum.html">Impressum</a></li><li><a href="#">Datenschutz</a></li><li><a href="#">AGB</a></li><li><a href="#">Widerrufsbelehrung</a></li><li><a href="#">Versand &amp; Zahlung</a></li></ul>
       </div>
     </div>
-    <p class="small">© 2026 Levant Olivia · <span class="ph">[Firmenname / Inhaber, Anschrift]</span></p>
+    <p class="small">© 2026 Levant Olivia · Ayham Nassour · Am Isfeld 24b · 22589 Hamburg</p>
   </div>
 </footer>
 
 <script>
   // Replace with the real Whop product link when the store is set up.
-  var WHOP_LINK = "";
+  var WHOP_LINK = "https://whop.com/checkout/plan_rHfcERQZG8WwK";
   var buy = document.getElementById("buy");
-  buy.addEventListener("click", function(e){
-    if(!WHOP_LINK){ e.preventDefault(); buy.textContent = "Bald verfügbar"; }
-    else { buy.href = WHOP_LINK; }
-  });
+  if (WHOP_LINK) { buy.href = WHOP_LINK; }
+  else { buy.addEventListener("click", function(e){ e.preventDefault(); buy.textContent = "Bald verfügbar"; }); }
 </script>
 </body>
 </html>
