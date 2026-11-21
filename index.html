@@ -5,124 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Levant Olivia</title>
 <meta name="description" content="Levant Olivia – Olivenöl aus den Hainen unserer Familie in Syrien. Von Großvaters Bäumen direkt zu dir nach Hause.">
-<style>
-/* Look: same as the bottle and tin labels. Cream paper, dark olive ink, ochre accent,
-   thin ochre frame, letterspaced kicker, olive branch. Dark sections use the tin color (RAL 6014). */
-@font-face{font-family:"Lora";src:url("fonts/Lora-Variable.ttf") format("truetype");font-weight:400 700;font-style:normal;font-display:swap}
-@font-face{font-family:"Lora";src:url("fonts/Lora-Italic-Variable.ttf") format("truetype");font-weight:400 700;font-style:italic;font-display:swap}
-:root{
-  --cream:#F6F1E4;      /* page, label paper */
-  --paper:#FBF8F0;      /* raised surfaces */
-  --olive:#2E3A1F;      /* ink, label text */
-  --leaf:#535D3E;       /* secondary text */
-  --ochre:#8A5E18;      /* accent, label ochre */
-  --tin:#47402E;        /* dark sections, tin color RAL 6014 */
-  --line:#CFCAB4;       /* hairlines */
-  --display:"Lora","Palatino Linotype",Palatino,Georgia,serif;
-  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--cream);color:var(--olive);font-family:var(--body);font-size:17px;line-height:1.6;color-scheme:light}
-img,svg{max-width:100%;display:block}
-a{color:inherit}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:2px}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;text-wrap:balance}
-h1{font-size:clamp(2.3rem,4.8vw,3.6rem);letter-spacing:-.01em}
-h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
-h3{font-size:1.3rem}
-p{max-width:62ch}
-.muted{color:var(--leaf)}
-.ph{background:#EFE2BE;color:#6B4A10;padding:0 .3em;border-radius:3px;font-size:.92em;white-space:nowrap}
-.kicker{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);font-weight:600;margin-bottom:14px}
-.branch{width:200px;height:52px;color:var(--olive)}
-.branch{--fruit:var(--ochre)}
-
-/* header */
-header{border-bottom:1px solid var(--olive)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap}
-.logo{font-family:var(--display);font-weight:600;font-size:1.55rem;text-decoration:none;letter-spacing:-.005em;line-height:1}
-.logo small{display:block;font-family:var(--body);font-size:.62rem;font-weight:600;letter-spacing:.22em;color:var(--ochre);margin-top:5px}
-.nav ul{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
-.nav ul a{text-decoration:none;font-size:.95rem;color:var(--leaf)}
-.nav ul a:hover{color:var(--olive)}
-.btn{display:inline-block;background:var(--olive);color:var(--cream);text-decoration:none;padding:13px 26px;border-radius:3px;border:1px solid var(--olive);cursor:pointer;font:inherit;font-weight:600;letter-spacing:.02em}
-.btn:hover{background:#1E2614}
-.btn.small{padding:9px 18px;font-size:.92rem}
-.btn.ghost{background:transparent;color:var(--olive)}
-.btn.ghost:hover{background:var(--paper)}
-
-/* hero: framed like the tin label */
-.hero-frame{margin-top:40px;border:1.5px solid var(--ochre);padding:56px 48px}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.hero .branch{margin:22px 0 4px}
-.hero p.lead{font-size:1.15rem;margin:14px 0 30px;color:var(--leaf)}
-.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
-.portrait{border:1.5px solid var(--ochre);padding:12px;background:var(--paper)}
-.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
-.portrait figcaption{margin-top:10px;font-size:.88rem;color:var(--leaf);text-align:center}
-
-/* facts: like the front field of the label */
-.facts{margin-top:48px}
-.facts .wrap > div{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:22px 0;border-top:1px solid var(--olive);border-bottom:1px solid var(--olive)}
-.fact b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:600}
-.fact span{font-size:.88rem;color:var(--leaf)}
-
-section{padding:88px 0}
-.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.story blockquote{font-family:var(--display);font-style:italic;font-size:1.6rem;line-height:1.35;color:var(--ochre);margin-top:18px}
-.story blockquote cite{display:block;font-family:var(--body);font-style:normal;font-size:.9rem;color:var(--leaf);margin-top:12px}
-.story .text{display:grid;gap:16px}
-
-/* product */
-.product{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.prod{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
-.bottle{border:1.5px solid var(--ochre);padding:12px}
-.bottle img{width:100%;height:auto}
-.price{font-family:var(--display);font-weight:600;font-size:2.2rem;margin:10px 0 4px}
-.specs{list-style:none;margin:22px 0 28px;border-top:1px solid var(--olive)}
-.specs li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
-.specs li span:first-child{color:var(--leaf)}
-.note{font-size:.82rem;color:var(--leaf);margin-top:14px}
-
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
-.step{border-top:1px solid var(--olive);padding-top:18px}
-.step .n{font-family:var(--display);font-style:italic;color:var(--ochre);font-size:1.2rem}
-.step h3{margin:6px 0 8px}
-.step p{font-size:.96rem;color:var(--leaf)}
-
-/* faq */
-.faq{max-width:760px}
-details{border-bottom:1px solid var(--line);padding:18px 0}
-summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--ochre);font-size:1.3rem;line-height:1}
-details[open] summary::after{content:"–"}
-details p{margin-top:10px;color:var(--leaf)}
-
-/* footer: tin color */
-footer{background:var(--tin);color:#EDE6D3;padding:56px 0 36px;font-size:.92rem}
-footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
-footer h3{color:var(--cream);font-size:1.15rem;margin-bottom:10px}
-footer ul{list-style:none;display:grid;gap:6px}
-footer a{color:#EDE6D3}
-footer .branch{color:#D9CFB5;margin-bottom:18px;width:150px;height:39px}
-footer .branch{--fruit:#C9A24A}
-footer .small{max-width:none;margin-top:32px;border-top:1px solid #5E5640;padding-top:18px;font-size:.82rem;color:#D2C9B0}
-
-@media (max-width:860px){
-  .hero,.story,.prod{grid-template-columns:1fr;gap:32px}
-  .hero-frame{padding:32px 22px;margin-top:24px}
-  .facts .wrap > div{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:1fr}
-  footer .cols{grid-template-columns:1fr}
-  section{padding:60px 0}
-}
-@media (max-width:480px){.nav ul{display:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -151,6 +34,11 @@ footer .small{max-width:none;margin-top:32px;border-top:1px solid #5E5640;paddin
       <li><a href="#herkunft">Vom Hain zu dir</a></li>
       <li><a href="#faq">Fragen</a></li>
     </ul>
+    <nav class="lang" aria-label="Sprache">
+      <a href="./" aria-current="page" hreflang="de">DE</a>
+      <a href="en/" hreflang="en" lang="en">EN</a>
+      <a href="ar/" hreflang="ar" lang="ar">عربي</a>
+    </nav>
     <a class="btn small" href="#oel">Jetzt bestellen</a>
   </div>
 </header>
