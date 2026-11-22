@@ -1,0 +1,11 @@
+{
+  "name": "levant-olivia",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "vite build",
+    "typecheck": "echo \"plain HTML site, nothing to type-check\""
+  }
+}
