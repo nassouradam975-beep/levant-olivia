@@ -91,6 +91,30 @@
         <p>ومع <span lang="en">Levant Olivia</span> نشاركك إياه الآن: الزيت نفسه الموجود في بيتنا، معبّأً لمائدتك.</p>
       </div>
     </div>
+    <div class="wrap photo-row">
+      <figure><img src="../img/jiddo-sunset.jpg" alt="جدّي أمين عند الغروب فوق التلال" width="765" height="1020" loading="lazy"><figcaption>مساءً فوق التلال</figcaption></figure>
+      <figure><img src="../img/jiddo-coffee.jpg" alt="جدّي أمين مع القهوة تحت الأشجار" width="900" height="1600" loading="lazy"><figcaption>قهوة تحت الأشجار</figcaption></figure>
+      <figure><img src="../img/table-breakfast.jpg" alt="مائدة فطور مع اللبنة والزيتون وزيتنا، وخلفها جدّي أمين" width="900" height="1600" loading="lazy"><figcaption>الفطور كما نأكله في البيت</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="grove" class="grove">
+    <div class="wrap">
+      <p class="kicker">من البستان</p>
+      <h2>صور حقيقية من اللاذقية.</h2>
+      <p class="muted">ليست صورًا جاهزة: التقطت عائلتنا هذه الصور في القطاف الأخير، في البستان وفي المعصرة.</p>
+      <div class="gallery">
+        <video src="../video/grove-walk.mp4" poster="../img/grove-walk-poster.jpg" aria-label="جدّي أمين في طريقه إلى البستان" autoplay muted loop playsinline preload="none"></video>
+        <img src="../img/grove-tree.jpg" alt="شجرة زيتون مليئة بالزيتون الأخضر" width="900" height="1200" loading="lazy">
+        <img src="../img/harvest-tarp.jpg" alt="الزيتون يتساقط على الغطاء أثناء القطاف" width="900" height="1200" loading="lazy">
+        <img src="../img/harvest-family.jpg" alt="العائلة تقطف معًا وجدّي أمين يراقب" width="900" height="1200" loading="lazy">
+        <img src="../img/harvest-sack.jpg" alt="كيس من الزيتون المقطوف حديثًا" width="900" height="1200" loading="lazy">
+        <video src="../video/mill-conveyor.mp4" poster="../img/mill-conveyor-poster.jpg" aria-label="الزيتون يدخل إلى المعصرة" autoplay muted loop playsinline preload="none"></video>
+        <video src="../video/oil-pour.mp4" poster="../img/oil-pour-poster.jpg" aria-label="الزيت الطازج يتدفق من المعصرة" autoplay muted loop playsinline preload="none"></video>
+        <img src="../img/olives-branch.jpg" alt="غصن عليه زيتون أخضر وداكن" width="900" height="1200" loading="lazy">
+        <img src="../img/jiddo-bucket.jpg" alt="جدّي أمين يحمل دلوًا من الحمضيات" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
   </section>
 
   <section id="oil" class="product">
@@ -168,6 +192,11 @@
   var buy = document.getElementById("buy");
   if (WHOP_LINK) { buy.href = WHOP_LINK; }
   else { buy.addEventListener("click", function(e){ e.preventDefault(); buy.textContent = "قريبًا"; }); }
+</script>
+<script>
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video[autoplay]").forEach(function(v){ v.removeAttribute("autoplay"); v.pause(); v.controls = true; });
+  }
 </script>
 </body>
 </html>

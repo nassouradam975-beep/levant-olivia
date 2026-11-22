@@ -92,6 +92,30 @@
         <!-- Story: only keep details that are true for the family. -->
       </div>
     </div>
+    <div class="wrap photo-row">
+      <figure><img src="img/jiddo-sunset.jpg" alt="Großvater Amin bei Sonnenuntergang über den Hügeln" width="765" height="1020" loading="lazy"><figcaption>Abends über den Hügeln</figcaption></figure>
+      <figure><img src="img/jiddo-coffee.jpg" alt="Großvater Amin mit Kaffee unter den Bäumen" width="900" height="1600" loading="lazy"><figcaption>Kaffee unter den Bäumen</figcaption></figure>
+      <figure><img src="img/table-breakfast.jpg" alt="Frühstückstisch mit Labneh, Oliven und unserem Öl, dahinter Großvater Amin" width="900" height="1600" loading="lazy"><figcaption>Frühstück, wie es bei uns gegessen wird</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="grove" class="grove">
+    <div class="wrap">
+      <p class="kicker">Aus dem Hain</p>
+      <h2>Echte Bilder aus Latakia.</h2>
+      <p class="muted">Keine Stockfotos: Diese Bilder hat unsere Familie bei der letzten Ernte gemacht, im Hain und in der Mühle.</p>
+      <div class="gallery">
+        <video src="video/grove-walk.mp4" poster="img/grove-walk-poster.jpg" aria-label="Großvater Amin auf dem Weg in den Hain" autoplay muted loop playsinline preload="none"></video>
+        <img src="img/grove-tree.jpg" alt="Olivenbaum voller grüner Oliven" width="900" height="1200" loading="lazy">
+        <img src="img/harvest-tarp.jpg" alt="Oliven fallen beim Ernten auf die Plane" width="900" height="1200" loading="lazy">
+        <img src="img/harvest-family.jpg" alt="Die Familie erntet gemeinsam, Großvater Amin schaut zu" width="900" height="1200" loading="lazy">
+        <img src="img/harvest-sack.jpg" alt="Ein Sack frisch gepflückter Oliven" width="900" height="1200" loading="lazy">
+        <video src="video/mill-conveyor.mp4" poster="img/mill-conveyor-poster.jpg" aria-label="Die Oliven laufen in die Mühle" autoplay muted loop playsinline preload="none"></video>
+        <video src="video/oil-pour.mp4" poster="img/oil-pour-poster.jpg" aria-label="Frisches Öl fließt aus der Presse" autoplay muted loop playsinline preload="none"></video>
+        <img src="img/olives-branch.jpg" alt="Zweig mit grünen und dunklen Oliven" width="900" height="1200" loading="lazy">
+        <img src="img/jiddo-bucket.jpg" alt="Großvater Amin bringt einen Eimer Zitrusfrüchte" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
   </section>
 
   <section id="oel" class="product">
@@ -169,6 +193,11 @@
   var buy = document.getElementById("buy");
   if (WHOP_LINK) { buy.href = WHOP_LINK; }
   else { buy.addEventListener("click", function(e){ e.preventDefault(); buy.textContent = "Bald verfügbar"; }); }
+</script>
+<script>
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video[autoplay]").forEach(function(v){ v.removeAttribute("autoplay"); v.pause(); v.controls = true; });
+  }
 </script>
 </body>
 </html>

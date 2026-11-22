@@ -91,6 +91,30 @@
         <p>With Levant Olivia we're sharing it with you: the same oil we keep at home, bottled for your table.</p>
       </div>
     </div>
+    <div class="wrap photo-row">
+      <figure><img src="../img/jiddo-sunset.jpg" alt="Grandfather Amin at sunset above the hills" width="765" height="1020" loading="lazy"><figcaption>Evening above the hills</figcaption></figure>
+      <figure><img src="../img/jiddo-coffee.jpg" alt="Grandfather Amin with coffee under the trees" width="900" height="1600" loading="lazy"><figcaption>Coffee under the trees</figcaption></figure>
+      <figure><img src="../img/table-breakfast.jpg" alt="Breakfast table with labneh, olives and our oil, grandfather Amin behind it" width="900" height="1600" loading="lazy"><figcaption>Breakfast the way we eat it at home</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="grove" class="grove">
+    <div class="wrap">
+      <p class="kicker">From the grove</p>
+      <h2>Real photos from Latakia.</h2>
+      <p class="muted">No stock photos: our family took these during the last harvest, in the grove and at the mill.</p>
+      <div class="gallery">
+        <video src="../video/grove-walk.mp4" poster="../img/grove-walk-poster.jpg" aria-label="Grandfather Amin walking into the grove" autoplay muted loop playsinline preload="none"></video>
+        <img src="../img/grove-tree.jpg" alt="Olive tree full of green olives" width="900" height="1200" loading="lazy">
+        <img src="../img/harvest-tarp.jpg" alt="Olives falling onto the tarp during the harvest" width="900" height="1200" loading="lazy">
+        <img src="../img/harvest-family.jpg" alt="The family harvesting together, grandfather Amin watching" width="900" height="1200" loading="lazy">
+        <img src="../img/harvest-sack.jpg" alt="A sack of freshly picked olives" width="900" height="1200" loading="lazy">
+        <video src="../video/mill-conveyor.mp4" poster="../img/mill-conveyor-poster.jpg" aria-label="Olives going into the mill" autoplay muted loop playsinline preload="none"></video>
+        <video src="../video/oil-pour.mp4" poster="../img/oil-pour-poster.jpg" aria-label="Fresh oil flowing from the press" autoplay muted loop playsinline preload="none"></video>
+        <img src="../img/olives-branch.jpg" alt="Branch with green and dark olives" width="900" height="1200" loading="lazy">
+        <img src="../img/jiddo-bucket.jpg" alt="Grandfather Amin carrying a bucket of citrus" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
   </section>
 
   <section id="oil" class="product">
@@ -168,6 +192,11 @@
   var buy = document.getElementById("buy");
   if (WHOP_LINK) { buy.href = WHOP_LINK; }
   else { buy.addEventListener("click", function(e){ e.preventDefault(); buy.textContent = "Coming soon"; }); }
+</script>
+<script>
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video[autoplay]").forEach(function(v){ v.removeAttribute("autoplay"); v.pause(); v.controls = true; });
+  }
 </script>
 </body>
 </html>

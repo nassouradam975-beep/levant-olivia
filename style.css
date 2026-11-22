@@ -134,3 +134,19 @@ footer .small{max-width:none;margin-top:32px;border-top:1px solid #5E5640;paddin
 [dir=rtl] .logo{direction:ltr;text-align:right}
 [dir=rtl] [lang=en]{font-family:var(--display)}
 @media (max-width:480px){.nav > .btn.small{display:none}}
+
+/* photos: story row and grove gallery */
+.photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.photo-row figure{border:1.5px solid var(--ochre);padding:10px;background:var(--paper)}
+.photo-row img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.photo-row figcaption{margin-top:8px;font-size:.86rem;color:var(--leaf);text-align:center}
+.grove{padding-top:0}
+.grove h2{margin-bottom:10px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.gallery img,.gallery video{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--line)}
+@media (max-width:860px){
+  .photo-row{grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+  .photo-row figure:first-child{grid-column:1/-1}
+  .gallery{grid-template-columns:1fr 1fr;gap:10px}
+  .gallery > :first-child{grid-column:1/-1;aspect-ratio:4/5}
+}
