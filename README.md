@@ -1,6 +1,6 @@
-# Levant Olivia
+# Ramitha (formerly Levant Olivia)
 
-Website for Levant Olivia, olive oil from the family groves in Latakia, Syria.
+Website for Ramitha, olive oil from the family groves in Latakia, Syria.
 
 - `index.html`: the site in German (main language)
 - `en/index.html`, `ar/index.html`: English and Arabic (right to left) versions, same layout. Change text in all three when you edit the site.
