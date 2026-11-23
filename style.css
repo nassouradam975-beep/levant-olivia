@@ -150,3 +150,38 @@ footer .small{max-width:none;margin-top:32px;border-top:1px solid #5E5640;paddin
   .gallery{grid-template-columns:1fr 1fr;gap:10px}
   .gallery > :first-child{grid-column:1/-1;aspect-ratio:4/5}
 }
+
+/* products: coming soon */
+.product .intro{margin-top:10px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+.pcard{display:flex;flex-direction:column;gap:10px}
+.pcard h3{margin-top:6px}
+.pcard .btn{align-self:flex-start;margin-top:auto}
+.pfig{position:relative;border:1.5px solid var(--ochre);padding:18px;background:var(--cream)}
+.pimg{width:100%;height:auto;aspect-ratio:2/3}
+.badge{position:absolute;top:12px;left:12px;background:var(--olive);color:var(--cream);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:2px}
+[dir=rtl] .badge{left:auto;right:12px;letter-spacing:0}
+.pts{list-style:none;font-size:.92rem;color:var(--leaf);border-top:1px solid var(--line)}
+.pts li{padding:7px 0;border-bottom:1px solid var(--line)}
+
+/* sign-up: dark like the tins */
+.signup{background:#1C1C1A;color:var(--cream)}
+.signup .kicker{color:#C9A15A}
+.signup-in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.signup-in > div p{color:#D9D3C2;margin-top:14px}
+#signup{display:grid;gap:14px;background:var(--cream);color:var(--olive);padding:28px;border:1.5px solid #C9A15A}
+#signup .fl{font-weight:600;font-size:.92rem}
+#signup input[type=email]{font:inherit;padding:12px 14px;border:1px solid var(--olive);border-radius:3px;background:#fff;color:var(--olive);width:100%}
+#signup fieldset{border:0;display:grid;gap:6px}
+#signup legend{margin-bottom:6px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.chk input{margin-top:5px;accent-color:var(--olive);width:18px;height:18px;flex-shrink:0}
+.consent{font-size:.84rem;color:var(--leaf)}
+#signup .btn{justify-self:start}
+#signup .status{font-size:.9rem;color:var(--ochre);min-height:1.2em}
+@media (max-width:860px){
+  .pgrid{grid-template-columns:1fr;gap:36px}
+  .pfig{max-width:360px}
+  .signup-in{grid-template-columns:1fr;gap:28px}
+}
+[dir=rtl] .pimg{direction:ltr;unicode-bidi:isolate}
